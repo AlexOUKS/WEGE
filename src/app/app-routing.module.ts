@@ -4,11 +4,17 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { RxReactiveFormsModule } from '@rxweb/reactive-form-validators'; 
+import { LoginComponent } from './login/login.component';
+import { FormComponent } from './form/form.component';
 
-const routes: Routes = [];
+const appRoutes: Routes = [
+  { path: 'login', component: LoginComponent },
+  { path: 'fiche', component: FormComponent },
+  { path: '**', component: LoginComponent }
+];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes),
+  imports: [RouterModule.forRoot(appRoutes),
     BrowserModule, 
     FormsModule,
     ReactiveFormsModule,
