@@ -9,14 +9,21 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
 import {MatToolbarModule} from '@angular/material/toolbar';
+<<<<<<< HEAD
 import { LoginComponent } from './login/login.component';
+=======
+>>>>>>> 8793e06ef8ab320291c8f84a78d8a9c517dd884c
 
 @NgModule({
   declarations: [
     AppComponent,
     FormComponent,
+<<<<<<< HEAD
     HeaderComponent,
     LoginComponent
+=======
+    HeaderComponent
+>>>>>>> 8793e06ef8ab320291c8f84a78d8a9c517dd884c
   ],
   imports: [
     BrowserModule,
