@@ -10,13 +10,22 @@ import { ReactiveFormsModule } from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { LoginComponent } from './login/login.component';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'; 
+import { TokenInterceptor } from './login/login.interceptor';
+import { AuthGuard } from './login/login.guard';
+import { MainComponent } from './main/main.component';
+import { NewAccountComponent } from './new-account/new-account.component';
+import { ValidationComponent } from './validation/validation.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FormComponent,
     HeaderComponent,
-    LoginComponent
+    LoginComponent,
+    MainComponent,
+    NewAccountComponent,
+    ValidationComponent,
   ],
   imports: [
     BrowserModule,
@@ -24,9 +33,17 @@ import { LoginComponent } from './login/login.component';
     BrowserAnimationsModule,
     ReactiveFormsModule,
     MatToolbarModule,
-    MatInputModule
+    MatInputModule,
+    HttpClientModule 
   ],
-  providers: [],
+  providers: [
+    AuthGuard,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

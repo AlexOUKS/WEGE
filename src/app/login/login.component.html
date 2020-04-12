@@ -1,21 +1,18 @@
-<div className="Auth">
-    <div className="AuthRightBlock">
-      <div className="LoginBlock">
-  
-        <div className="InnerBlockLogin"> 
+<form [formGroup]="loginForm">
+  <mat-form-field class="example-full-width">
+      <label>User</label>
+      <input matInput type="text" formControlName="login" class="form-control" />
+  </mat-form-field>
 
-            <Label for="exampleEmail">Login</Label>
-            <Input/>
 
-           
-            <Label for="examplePassword">Mot de passe</Label>
-            <Input  type="password" name="password" />
-
-          <Button color="primary">Connexion</Button>
-        </div>
-      </div>
-    </div>
-    <div className="AuthLeftBlock">
-        <img  />
-    </div>
+  <mat-form-field class="example-full-width">
+      <label>Password</label>
+      <input matInput type="password" formControlName="mdp" class="form-control" />
+    </mat-form-field>
+    
+  <div class="text-center">
+    <button class="btn btn-primary mr-1" (click)="onSubmit()">Register</button> 
   </div>
+
+  <a>Créer un compte</a>
+</form>
